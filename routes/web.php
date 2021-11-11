@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/blog', 'App\Http\Controllers\BlogController@search');
+
+Route::post('/meal/create', 'App\Http\Controllers\MealController@create');
+Route::get('/webhook', 'App\Http\Controllers\MealAgregatorAPIController@receiveWebHook');
