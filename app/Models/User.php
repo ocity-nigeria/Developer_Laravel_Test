@@ -41,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeMinimumAge($query, $age = 14){
+        return $query->where('date_of_birth', '<=', now()->subYears($age));
+    }
+    public function profile(){
+        return $this->hasOne(Profile::class);
+    }
 }
