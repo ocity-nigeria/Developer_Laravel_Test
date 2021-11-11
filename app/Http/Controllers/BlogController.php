@@ -1,15 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline;
+
+
 
 class BlogController extends Controller
 {
     
+    //
+
     public function search()
     {
-        $query = Posts::query();
+
+        $query = Blog::query();
+        // $query = Posts::query();
         $posts = app(Pipeline::class)
 						-> send($query)
 						->through([
@@ -19,4 +26,7 @@ class BlogController extends Controller
 		
         dd($posts->get());
     }
+     
+
+    
 }

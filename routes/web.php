@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MealController;
->>>>>>> e677b07... task 2
 use Illuminate\Support\Facades\Route;
 
 /*

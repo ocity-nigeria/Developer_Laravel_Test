@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\NotifyAdminAction;
 use Illuminate\Http\Request;
 
 class MealAgregatorAPIController extends Controller
