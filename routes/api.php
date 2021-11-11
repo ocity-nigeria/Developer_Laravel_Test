@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/blog', 'App\Http\Controllers\BlogController@search');
+
+Route::post('/meal/create', 'App\Http\Controllers\MealController@create');
+Route::get('/webhook', 'App\Http\Controllers\MealAgregatorAPIController@receiveWebHook');
