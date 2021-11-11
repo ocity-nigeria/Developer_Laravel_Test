@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Commands\everyMinute::class
     ];
 
     /**
@@ -25,6 +26,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('everyMinute:update')->everyMinute();
+
+        // $schedule->call([\App\Http\Controllers\CompaniesController::class, 'receiveWebHook'])
+        // ->everyMinute();
     }
 
     /**
