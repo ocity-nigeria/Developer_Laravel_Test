@@ -1,7 +1,6 @@
- <?php
+<?php
 
 namespace App\QueryFilter;
-
 
 class Title
 {
